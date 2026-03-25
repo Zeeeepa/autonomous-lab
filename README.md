@@ -91,6 +91,7 @@ When work is ready, you review it. Accept, request revisions, or reject. The loo
 
 - **Zero additional cost**: runs on your existing coding agent subscription. No separate API keys, no usage-based billing, no new accounts.
 - **Multi-agent orchestration**: opt-in mode where each role (PI, Trainee, Reviewer) runs as a separate agent with its own context window. Uses your existing CLI subscriptions (Claude Code, Codex CLI, Cursor) -- no API keys needed. Falls back to single-agent on any failure.
+- **Auto skill learning**: agents acquire missing skills on the fly. When a character needs a skill it doesn't have, the engine searches a tiered cascade — character marketplace → GitHub → [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) (1000+ scientific tools) → auto-generate — and installs a SKILL.md without breaking the loop. The research never stalls because of a missing capability.
 - **Skill containers**: configure characters with any combination of SKILL.md files you already have. A PI with `scanpy + scientific-writing + statistical-analysis` skills behaves differently from a Tech Lead with `react + typescript + code-review` skills.
 - **24-hour sessions**: the loop runs indefinitely. No timeout, no context loss. Sessions persist across disconnects with `autolab_resume`.
 - **Fully configurable**: YAML character profiles control personality, expertise, goals, and available tools. Swap them in seconds.
@@ -112,6 +113,7 @@ When work is ready, you review it. Accept, request revisions, or reject. The loo
 | `autolab_consult` | Invite a domain expert |
 | `autolab_editorial` | Wait for editor decision |
 | `autolab_editor_act` | Execute editorial decision (AI fallback) |
+| `autolab_acquire_skill` | Search marketplace/ToolUniverse for a skill and install it |
 | `autolab_create_character` | Build a character profile |
 | `lab_meeting` | Pause for user feedback between turns |
 
